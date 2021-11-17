@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      rel="icon"
+      href="https://cdn.discordapp.com/attachments/885518772176306266/910155976424947782/1637068480748.png"
+      type="image/png"
+    />
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@300;500;700&family=Montserrat:wght@100;200;300;400;500;600;700&display=swap');
+
+      :root {
+        --white: #f7f6f4;
+        --orange: #d57c42;
+        --black: #272924;
+      }
+      ::-webkit-scrollbar {
+        width: 0;
+      }
+      body {
+        background: var(--white);
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        overflow-x: hidden;
+        user-select: none;
+      }
+      header {
+        margin: 0 0 2rem 0;
+      }
+      header,
+      nav {
+        background: var(--orange);
+        padding: 5px;
+        width: 100%;
+      }
+      .logo {
+        height: 37.5px;
+        width: 75px;
+        background: url(https://media.discordapp.net/attachments/885518772176306266/910153881567248384/Shop.png);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        padding: 1.2rem;
+        margin: 0 auto 0 7em;
+      }
+      ul {
+        display: flex;
+        list-style-type: none;
+        gap: 1em;
+        margin-right: 7em;
+        font-size: 1.2rem;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 500;
+      }
+      .one {
+        margin-left: auto;
+      }
+      li {
+        margin: 1em 0 0 4rem;
+      }
+      a {
+        text-decoration: none;
+        color: var(--white);
+        position: relative;
+        letter-spacing: 0.2ch;
+      }
+      a::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 1px;
+        background: var(--white);
+
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: transform 250ms ease-in-out;
+      }
+      a:hover::after {
+        transform: scaleX(1);
+        transform-origin: left;
+      }
+
+      /* cards */
+      h1 {
+        margin-top: 20px;
+        margin-bottom: 30px;
+        margin-left: 7.5em;
+        font-family: 'Montserrat', sans-serif;
+        color: #d57c42;
+        border-bottom: 5px double var(--black);
+        width: max-content;
+        padding-right: 2rem;
+      }
+      .columns {
+        display: grid;
+        grid-template-columns: repeat(4, 250px);
+        place-content: center;
+        gap: 1rem;
+      }
+      .card {
+        padding: 2rem;
+        font-family: 'Hind Madurai', sans-serif;
+        transition: 250ms;
+        background: #f7f6f4;
+        border-radius: 10px;
+        box-shadow: 0px 5px 10px 1px rgba(0, 0, 0, 15%);
+      }
+      .card:hover {
+        transform: translateY(-1%);
+        box-shadow: 0px 5px 7px 1px rgba(0, 0, 0, 30%);
+        background: #fdfcf9;
+      }
+
+      /* card styling */
+      img {
+        display: inline;
+        outline: 3px double var(--orange);
+        box-shadow: 0px 0px 5px 5px #27292493;
+        padding: 3px;
+      }
+      h2 {
+        width: 15ch;
+      }
+      #price {
+        letter-spacing: 1.2px;
+      }
+      .product-desc {
+        float: right;
+        max-height: 200px;
+        overflow-y: scroll;
+        line-height: 1.6;
+        background: #e6e6e6;
+        padding: 10px;
+        border-radius: 10px;
+      }
+
+      /* buttons */
+      span {
+        display: inline-block;
+        margin: 0.5rem 0;
+        width: 100px;
+        user-select: none;
+        text-align: center;
+      }
+      span:hover {
+        cursor: pointer;
+      }
+      .add-to-cart {
+        padding: 1rem 2rem;
+        background: var(--black);
+        color: var(--white);
+      }
+      .buy-now {
+        padding: 1rem 2rem;
+        background: var(--orange);
+        color: var(--white);
+      }
+
+      /* footer */
+
+      footer {
+        height: 40vh;
+        width: 100%;
+        display: grid;
+        place-content: center;
+        background: var(--black);
+        color: var(--white);
+        font-family: 'Hind Madurai', sans-serif;
+        text-align: center;
+        font-weight: 300;
+        padding: 50px 0;
+      }
+    </style>
+    <title>shop.com</title>
+    <header>
+      <nav>
+        <ul>
+          <div class="logo"></div>
+          <li><a href="" class="one">Home</a></li>
+          <li><a href="">About us</a></li>
+          <li><a href="">Contact us</a></li>
+        </ul>
+      </nav>
+    </header>
+  </head>
+  <body>
+    <h1>Related Items</h1>
+    <div class="columns">
+      <div class="card">
+        <img
+          src="https://i.pinimg.com/474x/36/3d/d6/363dd6296ac84dc8876b13d734756771.jpg"
+          height="150px"
+          width="100px"
+        />
+        <h2>Jujutsu Kaisen</h2>
+        <br />
+        <p id="price">$14.99</p>
+        <p class="product-desc">
+          The story follows high school student Yuji Itadori as he joins a
+          secret organization of Jujutsu Sorcerers in order to kill a powerful
+          Curse named Ryomen Sukuna, of whom Yuji becomes the host.
+        </p>
+        <div class="btn">
+          <span class="add-to-cart atc-one" onclick="atcOne()"
+            >Add to cart</span
+          >
+          <span class="buy-now">Buy Now</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <img
+          src="https://static.wikia.nocookie.net/kimetsu-no-yaiba/images/8/83/Kimetsu_no_Yaiba_V1.png"
+          height="150px"
+          width="100px"
+        />
+        <h2>Kimetsu No Yaiba</h2>
+        <br />
+        <p id="price">$14.99</p>
+        <p class="product-desc">
+          Kimetsu no Yaiba is a Japanese manga series written and illustrated by
+          Koyoharu Gotouge. It follows teenage Tanjiro Kamado, who strives to
+          become a demon slayer after his family was slaughtered and his younger
+          sister Nezuko turned into a demon.
+        </p>
+
+        <span class="add-to-cart atc-two" onclick="atcTwo()">Add to cart</span>
+        <span class="buy-now">Buy Now</span>
+      </div>
+
+      <div class="card">
+        <img
+          src="https://legendofthegoldenwind.files.wordpress.com/2019/01/yellowcover.jpg"
+          height="150px"
+          width="100px"
+        />
+        <h2>Naruto</h2>
+        <br />
+        <p id="price">$9.99</p>
+        <p class="product-desc">
+          Naruto is a Japanese manga series written and illustrated by Masashi
+          Kishimoto. It tells the story of Naruto Uzumaki, a young ninja who
+          seeks recognition from his peers and dreams of becoming the Hokage,
+          the leader of his village.
+        </p>
+
+        <span class="add-to-cart atc-three" onclick="atcThree()"
+          >Add to cart</span
+        >
+        <span class="buy-now">Buy Now</span>
+      </div>
+
+      <div class="card">
+        <img
+          src="https://pm1.narvii.com/6178/0d884ae5d41510cc073bea3f182c8108a4da8e2f_hq.jpg"
+          height="150px"
+          width="100px"
+        />
+        <h2>Shingeki no Kyojin</h2>
+        <p id="price">$9.99</p>
+        <p class="product-desc">
+          Attack on Titan is a Japanese manga series written and illustrated by
+          Hajime Isayama. The story follows Eren Yeager, who vows to exterminate
+          the Titans after a Titan brings about the destruction of his hometown
+          and the death of his mother.
+        </p>
+
+        <span class="add-to-cart atc-four" onclick="atcFour()"
+          >Add to cart</span
+        >
+        <span class="buy-now">Buy Now</span>
+      </div>
+
+      <div class="card">
+        <img
+          src="https://images-na.ssl-images-amazon.com/images/I/81s8xJUzWGL.jpg"
+          height="150px"
+          width="100px"
+        />
+        <h2>Chainsaw Man</h2>
+        <br />
+        <p id="price">$14.99</p>
+        <p class="product-desc">
+          Denji was a small-time devil hunter just trying to survive in a harsh
+          world. After being killed on a job, he is revived by his pet devil-dog
+          Pochita and becomes something new and dangerous—Chainsaw Man! Denji's
+          a poor young man who'll do anything for money, even hunting down
+          devils with his pet devil-dog Pochita.
+        </p>
+
+        <span class="add-to-cart atc-five" onclick="atcFive()"
+          >Add to cart</span
+        >
+        <span class="buy-now">Buy Now</span>
+      </div>
+
+      <div class="card">
+        <img
+          src="https://images.booksense.com/images/414/311/9781975311414.jpg"
+          height="150px"
+          width="100px"
+        />
+        <h2>Jibaku Shounen Hanako-kun</h2>
+        <p id="price">$9.99</p>
+        <p class="product-desc">
+          Nene Yashiro, a first-year high-school student who loves the occult
+          and wishes for a boyfriend, summons the Seventh and most famous
+          Wonder, "Hanako-san of the Toilet", a girl who allegedly haunts the
+          bathroom and can grant wishes for the right price.
+        </p>
+
+        <span class="add-to-cart atc-six" onclick="atcSix()">Add to cart</span>
+        <span class="buy-now">Buy Now</span>
+      </div>
+
+      <div class="card">
+        <img
+          src="https://static.wikia.nocookie.net/komisan-wa-komyushou-desu/images/7/71/Volume_12_EN.jpg"
+          height="150px"
+          width="100px"
+        />
+        <h2>Komi-san wa Komyushu desu</h2>
+        <p id="price">$9.99</p>
+        <p class="product-desc">
+          Socially anxious high school student Shoko Komi’s greatest dream is to
+          make some friends, but everyone at school mistakes her crippling
+          social anxiety for cool reserve! With the whole student body keeping
+          their distance and Komi unable to utter a single word, friendship
+          might be forever beyond her reach.
+        </p>
+
+        <span class="add-to-cart atc-seven" onclick="atcSeven()"
+          >Add to cart</span
+        >
+        <span class="buy-now">Buy Now</span>
+      </div>
+    </div>
+    <br />
+    <br />
+
+    <footer>
+      <strong>name : </strong>
+      antonio, lorenzo k.
+      <br /><br />
+      <strong>section : </strong>
+      section - 9B
+      <br />
+      <br />
+      <hr style="width: 30%; border-bottom: 1px dotted var(--white)" />
+      <em
+        style="
+          width: 700px;
+          font-size: 14px;
+          letter-spacing: 0.25ch;
+          line-height: 1.6;
+        "
+        >developer's note : aha- sadly, the 'Buy now' doesn't do anything, i
+        would make it so that it would bring you to a shopee / lazada page
+        leading to that product but i didn't feel like fixing my code just for
+        that. it would be nice, though</em
+      >🤔
+      <p>
+        check the code
+        <a
+          href="https://codepen.io/mango-god/pen/gOxZowq"
+          style="color: var(--orange)"
+          target="_blank"
+          >here</a
+        >
+        &lt;3
+      </p>
+    </footer>
+
+    <!-- SCRIPTING -->
+    <script>
+      const spanOne = document.querySelector('.atc-one');
+      const spanTwo = document.querySelector('.atc-two');
+      const spanThree = document.querySelector('.atc-three');
+      const spanFour = document.querySelector('.atc-four');
+      const spanFive = document.querySelector('.atc-five');
+      const spanSix = document.querySelector('.atc-six');
+      const spanSeven = document.querySelector('.atc-seven');
+      function atcOne() {
+        spanOne.textContent = 'Added to cart';
+      }
+      function atcTwo() {
+        spanTwo.textContent = 'Added to cart';
+      }
+      function atcThree() {
+        spanThree.textContent = 'Added to cart';
+      }
+      function atcFour() {
+        spanFour.textContent = 'Added to cart';
+      }
+      function atcFive() {
+        spanFive.textContent = 'Added to cart';
+      }
+      function atcSix() {
+        spanSix.textContent = 'Added to cart';
+      }
+      function atcSeven() {
+        spanSeven.textContent = 'Added to cart';
+      }
+    </script>
+  </body>
+</html>
